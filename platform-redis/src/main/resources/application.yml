@@ -1,0 +1,16 @@
+server:
+  port: 9800
+spring:
+  application:
+    name: platform-redis
+  redis:
+    url: 127.0.0.1
+    port: 6379
+    connect-timeout: 5s
+    database: 0
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: 800
+        max-idle: 8
+        min-idle: 2
