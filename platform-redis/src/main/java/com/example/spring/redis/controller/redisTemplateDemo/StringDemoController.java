@@ -1,4 +1,4 @@
-package com.example.spring.redis.controller;
+package com.example.spring.redis.controller.redisTemplateDemo;
 
 import com.example.spring.core.entity.ResultData;
 import org.redisson.api.RedissonClient;

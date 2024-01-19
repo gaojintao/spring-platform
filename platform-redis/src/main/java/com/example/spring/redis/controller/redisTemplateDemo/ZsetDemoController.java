@@ -1,4 +1,4 @@
-package com.example.spring.redis.controller;
+package com.example.spring.redis.controller.redisTemplateDemo;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

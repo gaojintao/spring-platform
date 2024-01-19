@@ -1,5 +1,7 @@
 server:
   port: 9800
+#  servlet:
+#    context-path: store
 spring:
   application:
     name: platform-redis
@@ -14,3 +16,6 @@ spring:
         max-wait: 800
         max-idle: 8
         min-idle: 2
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
