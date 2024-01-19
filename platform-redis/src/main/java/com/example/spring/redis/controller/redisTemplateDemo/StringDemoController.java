@@ -1,6 +1,8 @@
 package com.example.spring.redis.controller.redisTemplateDemo;
 
 import com.example.spring.core.entity.ResultData;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -25,6 +27,7 @@ import java.util.concurrent.TimeUnit;
  **/
 @RestController
 @RequestMapping("/redisString")
+@Api(tags = "StringRedisTemplate String  操作", consumes = "application/json", produces = "application/json", protocols = "http")
 public class StringDemoController {
     @Autowired
     private RedissonClient redissonClient;
@@ -37,11 +40,12 @@ public class StringDemoController {
         return ResultData.success(key+"添加成功");
     }
     @GetMapping(value = "/addTime/{key}")
+    @ApiOperation(value = "设有过期时间的key写入 Redis", notes = "设有过期时间的key写入")
     public ResultData<String> addStringValueTime(@PathVariable("key") String key) throws InterruptedException {
         //设置k,v以及有效时长，TimeUnit为单位
         System.out.println(LocalDateTime.now());
-        stringRedisTemplate.opsForValue().set(key, "bpf", 10, TimeUnit.SECONDS);
-        Thread.sleep(11000);
+        stringRedisTemplate.opsForValue().set(key, "springdoc.cn", 10, TimeUnit.SECONDS);
+//        Thread.sleep(11000);
         return ResultData.success(stringRedisTemplate.opsForValue().get(key));
     }
     @GetMapping(value = "/addOffset/{key}")

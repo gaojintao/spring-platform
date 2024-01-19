@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RBucket;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -16,7 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @Slf4j
 @RestController
-@Api(tags = "Bucket相关接口",description = "提供用户相关的Rest API")
+@RequestMapping("/redisson/bucket")
+@Api(tags = "redisson 操作", consumes = "application/json", produces = "application/json", protocols = "http")
 public class BucketController {
 
     @Autowired

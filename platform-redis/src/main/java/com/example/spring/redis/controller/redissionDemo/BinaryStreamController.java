@@ -26,8 +26,8 @@ import java.io.OutputStream;
  **/
 @Slf4j
 @RestController
-@RequestMapping("/BinaryStream")
-@Api(tags = "分布式对象二进制流的操作", consumes = "application/json", produces = "application/json", protocols = "http")
+@RequestMapping("/redisson/BinaryStream")
+@Api(tags = "redisson 操作", consumes = "application/json", produces = "application/json", protocols = "http")
 public class BinaryStreamController {
     @Autowired
     private RedissonClient redissonClient;
