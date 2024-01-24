@@ -1,0 +1,10 @@
+server:
+  port: 9802
+spring:
+  application:
+    name: platform-es
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
+  elasticsearch:
+    uris: 127.0.0.1:9200
